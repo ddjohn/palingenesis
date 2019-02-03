@@ -13,12 +13,14 @@ clean)
 	;;
 
 build)
+	meteor build .
 	;;
 
 test)
 	;;
 
 analysis)
+	meteor lint
 	;;
 
 deploy)
