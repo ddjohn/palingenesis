@@ -12,4 +12,16 @@ build)
 	./gradlew build
 	;;
 
+test)
+	./gradlew test
+	;;
+
+analysis)
+	./gradlew lint
+	;;
+
+deploy)
+	./gradlew assemble
+	;;
+
 esac
