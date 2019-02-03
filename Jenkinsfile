@@ -6,19 +6,26 @@ pipeline {
   }
 
   stages {
+    stage('Clean') {
+      steps {
+        echo 'Cleaning...'
+        sh "android-launcher/palingenesis clean"
+      }
+    }
     stage('Build') {
       steps {
-        echo 'Building..'
+        echo 'Building...'
+        sh "android-launcher/palingenesis build"
       }
     }
     stage('Test') {
       steps {
-        echo 'Testing..'
+        echo 'Testing...'
       }
     }
     stage('Deploy') {
       steps {
-        echo 'Deploying....'
+        echo 'Deploying...'
       }
     }
   }
