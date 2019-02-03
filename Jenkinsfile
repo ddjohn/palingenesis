@@ -16,7 +16,7 @@ pipeline {
     stage('Init') {
       steps {
         echo 'Init...'
-        projects.each {project -> sh "${project}/palingenesis init"}
+        init(projects)
       }
     }
     stage('Clean') {
@@ -70,4 +70,11 @@ pipeline {
       }
     }
   }
+}
+
+@NonCPS
+def init(projects) {
+    projects.each { project ->
+        sh "${project}/palingenesis init"
+    }
 }
