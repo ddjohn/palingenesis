@@ -4,6 +4,11 @@ cd $(dirname $(readlink -f $0))
 
 case "$1" in
 
+init)
+	meteor update
+	meteor npm update
+	;;
+
 clean)
 	;;
 

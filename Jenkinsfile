@@ -6,6 +6,14 @@ pipeline {
   }
 
   stages {
+    stage('Init') {
+      steps {
+        echo 'Init...'
+        sh "android-launcher/palingenesis init"
+        sh   "android-ikaros/palingenesis init"
+        sh   "meteor-sisyfos/palingenesis init"
+      }
+    }
     stage('Clean') {
       steps {
         echo 'Cleaning...'

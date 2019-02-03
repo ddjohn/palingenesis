@@ -4,6 +4,9 @@ cd $(dirname $(readlink -f $0))
 
 case "$1" in
 
+init)
+	;;
+
 clean)
 	./gradlew clean
 	;;
