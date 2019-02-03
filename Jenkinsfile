@@ -10,6 +10,7 @@ pipeline {
       steps {
         echo 'Cleaning...'
         sh "android-launcher/palingenesis clean"
+        sh "android-ikaros/palingenesis clean"
       }
     }
     stage('Build') {
