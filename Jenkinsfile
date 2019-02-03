@@ -12,6 +12,7 @@ pipeline {
         sh "android-launcher/palingenesis init"
         sh   "android-ikaros/palingenesis init"
         sh   "meteor-sisyfos/palingenesis init"
+        sh   "meteor-waterplant/palingenesis init"
       }
     }
     stage('Clean') {
@@ -20,6 +21,7 @@ pipeline {
         sh "android-launcher/palingenesis clean"
         sh   "android-ikaros/palingenesis clean"
         sh   "meteor-sisyfos/palingenesis clean"
+        sh   "meteor-waterplant/palingenesis clean"
       }
     }
     stage('Build') {
@@ -28,6 +30,7 @@ pipeline {
         sh "android-launcher/palingenesis build"
         sh   "android-ikaros/palingenesis build"
         sh   "meteor-sisyfos/palingenesis build"
+        sh   "meteor-waterplant/palingenesis build"
       }
     }
     stage('Test') {
@@ -36,6 +39,7 @@ pipeline {
         sh "android-launcher/palingenesis test"
         sh   "android-ikaros/palingenesis test"
         sh   "meteor-sisyfos/palingenesis test"
+        sh   "meteor-waterplant/palingenesis test"
       }
     }
     stage('Analysis') {
@@ -44,6 +48,7 @@ pipeline {
         sh "android-launcher/palingenesis analysis"
         sh   "android-ikaros/palingenesis analysis"
         sh   "meteor-sisyfos/palingenesis analysis"
+        sh   "meteor-waterplant/palingenesis analysis"
       }
     }
     stage('Deploy') {
@@ -52,6 +57,7 @@ pipeline {
         sh "android-launcher/palingenesis deploy"
         sh   "android-ikaros/palingenesis deploy"
         sh   "meteor-sisyfos/palingenesis deploy"
+        sh   "meteor-waterplant/palingenesis deploy"
       }
     }
   }
