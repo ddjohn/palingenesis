@@ -22,51 +22,31 @@ pipeline {
     stage('Clean') {
       steps {
         echo 'Cleaning...'
-        sh  "android-launcher/palingenesis clean"
-        sh    "android-ikaros/palingenesis clean"
-        sh      "android-yumi/palingenesis clean"
-        sh    "meteor-sisyfos/palingenesis clean"
-        //sh "meteor-waterplant/palingenesis clean"
+        clean(projects)
       }
     }
     stage('Build') {
       steps {
         echo 'Building...'
-        sh  "android-launcher/palingenesis build"
-        sh    "android-ikaros/palingenesis build"
-        sh      "android-yumi/palingenesis build"
-        sh    "meteor-sisyfos/palingenesis build"
-        //sh "meteor-waterplant/palingenesis build"
+        build(projects)
       }
     }
     stage('Test') {
       steps {
         echo 'Testing...'
-        sh  "android-launcher/palingenesis test"
-        sh    "android-ikaros/palingenesis test"
-        sh      "android-yumi/palingenesis test"
-        sh    "meteor-sisyfos/palingenesis test"
-        //sh "meteor-waterplant/palingenesis test"
+        test(projects)
       }
     }
     stage('Analysis') {
       steps {
         echo 'Analysis...'
-        sh  "android-launcher/palingenesis analysis"
-        sh    "android-ikaros/palingenesis analysis"
-        sh      "android-yumi/palingenesis analysis"
-        sh    "meteor-sisyfos/palingenesis analysis"
-        //sh "meteor-waterplant/palingenesis analysis"
+        analysis(projects)
       }
     }
     stage('Deploy') {
       steps {
         echo 'Deploying...'
-        sh  "android-launcher/palingenesis deploy"
-        sh    "android-ikaros/palingenesis deploy"
-        sh      "android-yumi/palingenesis deploy"
-        sh    "meteor-sisyfos/palingenesis deploy"
-        //sh "meteor-waterplant/palingenesis deploy"
+        deploy(projects)
       }
     }
   }
@@ -78,3 +58,39 @@ def init(projects) {
         sh "${project}/palingenesis init"
     }
 }
+
+@NonCPS
+def clean(projects) {
+    projects.each { project ->
+        sh "${project}/palingenesis clean"
+    }
+}
+
+@NonCPS
+def build(projects) {
+    projects.each { project ->
+        sh "${project}/palingenesis build"
+    }
+}
+
+@NonCPS
+def test(projects) {
+    projects.each { project ->
+        sh "${project}/palingenesis test"
+    }
+}
+
+@NonCPS
+def analysis(projects) {
+    projects.each { project ->
+        sh "${project}/palingenesis analysis"
+    }
+}
+
+@NonCPS
+def deploy(projects) {
+    projects.each { project ->
+        sh "${project}/palingenesis deploy"
+    }
+}
+
