@@ -1,0 +1,16 @@
+{
+  "name": "wifog2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wifog.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node wifog.js"
+  },
+  "author": "David Johansson <ddjohn@gmail.com> (http://avelon.herokuapp.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "^2.30.1",
+    "selenium-webdriver": "^2.53.1"
+  }
+}

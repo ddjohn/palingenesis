@@ -1,0 +1,26 @@
+#!/bin/bash
+
+cd $(dirname $(readlink -f $0))
+
+case "$1" in
+
+init)
+	npm update
+	;;
+
+clean)
+	;;
+
+build)
+	;;
+
+test)
+	;;
+
+analysis)
+	;;
+
+deploy)
+	;;
+
+esac

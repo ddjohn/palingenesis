@@ -2,7 +2,8 @@ projects = [
   'android-launcher', 
   'android-ikaros', 
   'android-yumi', 
-  'meteor-sisyfos'
+  'meteor-sisyfos',
+  'nodejs-wifog',
 ]
 
 pipeline {
