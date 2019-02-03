@@ -5,15 +5,18 @@ pipeline {
     ANDROID_HOME = '/var/lib/jenkins/Android/Sdk' 
   }
 
+  projects = [
+    'android-launcher', 
+    'android-ikaros', 
+    'android-yumi', 
+    'meteor-sisyfos'
+  ]
+
   stages {
     stage('Init') {
       steps {
         echo 'Init...'
-        sh  "android-launcher/palingenesis init"
-        sh    "android-ikaros/palingenesis init"
-        sh      "android-yumi/palingenesis init"
-        sh    "meteor-sisyfos/palingenesis init"
-        //sh "meteor-waterplant/palingenesis init"
+        projects.each {project -> sh "${project}/palingenesis init"}
       }
     }
     stage('Clean') {
