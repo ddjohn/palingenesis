@@ -1,16 +1,16 @@
+projects = [
+  'android-launcher', 
+  'android-ikaros', 
+  'android-yumi', 
+  'meteor-sisyfos'
+]
+
 pipeline {
   agent any
 	
   environment {
     ANDROID_HOME = '/var/lib/jenkins/Android/Sdk' 
   }
-
-  projects = [
-    'android-launcher', 
-    'android-ikaros', 
-    'android-yumi', 
-    'meteor-sisyfos'
-  ]
 
   stages {
     stage('Init') {
