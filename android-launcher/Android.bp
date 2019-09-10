@@ -1,0 +1,19 @@
+android_app {
+    name: "palingenesis-launcher",
+    manifest: "launcher/src/main/AndroidManifest.xml",
+    srcs: [
+       "launcher/src/main/java/**/*.java"
+    ],
+    resource_dirs: [
+        "launcher/src/main/res/",
+    ],
+    static_libs: [
+        "android-support-v7-appcompat",
+        "android-support-constraint-layout",
+    ],
+    optimize: {
+        enabled: false,
+    },
+    vendor: true,
+    enabled: true,
+}
