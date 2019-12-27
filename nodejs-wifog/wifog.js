@@ -32,9 +32,9 @@ driver.findElement(webdriver.By.xpath("//div[@id='loggain-popup']/div/div/form/d
 	console.log("click: Submit...");
 	elem.click();
 	driver.wait(until.titleIs("Wifog"), 5000);
-	driver.sleep(2000);
+	driver.sleep(5000);
 
-	driver.findElement(webdriver.By.xpath("//div[@id='adverts-pop']")).then(function(elem) {
+	driver.findElement(webdriver.By.xpath("//div[@id='fyllpa-carousel']/div[1]/div/div[1]/a/div/figure/span/img")).then(function(elem) {
 		console.log("click: Reklam...");
 		elem.click();
 		driver.sleep(2000);
@@ -44,10 +44,21 @@ driver.findElement(webdriver.By.xpath("//div[@id='loggain-popup']/div/div/form/d
 			var popUpWindow = handles[1];
 			driver.switchTo().window(popUpWindow);
 
-			driver.sleep(2000);
-			driver.navigate().refresh();
-
 			driver.sleep(5000);
+
+
+//			driver.findElement(webdriver.By.xpath("//button[@class='qc-cmp-button']")).then(function(elem) {
+//				elem.click();
+//			});
+			//driver.sleep(5000);
+			//driver.navigate().refresh();
+
+//			driver.sleep(5000);
+driver.findElement(webdriver.By.id('video-cont')).then(function(elem) {
+	console.log("video: Get video (2)...");
+	elem.click();
+	driver.sleep(30000);
+});
 
 			driver.findElement(webdriver.By.tagName('video')).then(function(elem) {
 				console.log("video: Get video (1)...");
