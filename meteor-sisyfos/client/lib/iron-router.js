@@ -1,1 +1,0 @@
-Router.options.autoStart = false;
