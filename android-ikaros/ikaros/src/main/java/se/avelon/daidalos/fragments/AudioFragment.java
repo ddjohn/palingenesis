@@ -30,6 +30,8 @@ public class AudioFragment extends AbstractFragment {
         super.onViewCreated(view, savedInstanceState);
 
         AudioManager manager = (AudioManager)this.getActivity().getSystemService(Context.AUDIO_SERVICE);
+
+        /* Devices */
         AudioDeviceInfo devices[] = manager.getDevices(AudioManager.GET_DEVICES_ALL);
         ArrayList list = new ArrayList();
         list.add("Audio Devices:");

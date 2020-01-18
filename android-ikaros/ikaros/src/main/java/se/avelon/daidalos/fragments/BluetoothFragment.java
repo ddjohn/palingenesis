@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import se.avelon.daidalos.Debug;
 import se.avelon.daidalos.R;
+import se.avelon.daidalos.Utilities;
 
 public class BluetoothFragment extends AbstractFragment {
     private static final String TAG = BluetoothFragment.class.getSimpleName();
@@ -30,18 +33,20 @@ public class BluetoothFragment extends AbstractFragment {
         super.onViewCreated(view, savedInstanceState);
 
         BluetoothAdapter bluetooth = BluetoothAdapter.getDefaultAdapter();
-        Debug.w(TAG, "enabled=" + bluetooth.isEnabled());
 
-        Debug.w(TAG, "" + bluetooth.getAddress());
-        Debug.w(TAG, "" + bluetooth.getName());
-        Debug.w(TAG, "" + bluetooth.getState());
+        ((EditText)view.findViewById(R.id.enabled)).setText("Enabled: " + bluetooth.isEnabled());
+        ((EditText)view.findViewById(R.id.address)).setText("Enabled: " + bluetooth.getAddress());
+        ((EditText)view.findViewById(R.id.name)).setText("Name: " + bluetooth.getName());
+        ((EditText)view.findViewById(R.id.state)).setText("State: " + bluetooth.getState());
+
+        ArrayList list = new ArrayList();
+        list.add("Bluetooth Devices:");
 
         Set<BluetoothDevice> pairedDevices = bluetooth.getBondedDevices();
-
-            for (BluetoothDevice device : pairedDevices) {
-                Debug.w(TAG, "dev=" + device.getName());
-                Debug.w(TAG, "dev=" + device.getAddress());
+        for (BluetoothDevice device : pairedDevices) {
+            list.add("name=" + device.getName() +",address=" + device.getAddress());
         }
+        Utilities.spinner(view, R.id.devices, list);
 
         new BluetoothProfile.ServiceListener() {
             public void onServiceConnected(int profile, BluetoothProfile proxy) {
