@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/android-ikaros.iml" filepath="$PROJECT_DIR$/android-ikaros.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ikaros/ikaros.iml" filepath="$PROJECT_DIR$/ikaros/ikaros.iml" />
-    </modules>
-  </component>
-</project>

@@ -1,2 +1,0 @@
-# ikaros
-Demo app Android
